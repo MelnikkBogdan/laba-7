@@ -1,0 +1,105 @@
+#include <stdio.h>
+#include <iostream>
+#include <math.h>
+#include <vector>
+using namespace std;
+
+class intege
+{
+	string name;
+public:
+	intege(){
+		this->name = " ";}
+	intege(string name){
+		this->name = name;}
+	virtual void GetC() = 0;
+	
+};
+class two : public intege
+{
+public:
+	int a;
+	two(){
+		this->a = 1;}
+	two(int a)
+		: intege() {
+		this->a = a;}
+	void GetC()
+	{int c=0,a=10,i=0;
+      vector <int> b;
+while(a!=0){
+c=a-(2*(a/2));
+a=a/2;
+b.push_back(c);
+    i++;
+}
+
+for (i = b.size() - 1; i >= 0; i--) {
+      cout << b[i];
+}
+    cout<<endl;
+	}
+};
+class ten : public intege
+{
+public:
+	int a;
+	ten() {
+		this->a = 1;
+	}
+
+	ten(int a)
+		: intege() {
+		this->a = a; }
+		 void GetC()
+	{
+		cout <<a<< endl;
+	}
+};
+class six : public intege
+{
+public:
+	int a;
+	six() {
+		this->a = 1;
+	}
+
+	six(int a)
+		: intege()
+	{
+		this->a = a; 
+	}
+		void GetC()
+	{	int c,b=0;
+    char A[10];
+    for(int i=0;i<6;i++){
+        A[i]=65+i;}
+    if(a/16<1){
+        if(a<10){
+            cout<< a;}
+        else{
+            c=a%9;
+            cout<< A[c-1];}}
+    else{
+        b=a/16;
+        a=a%16;
+        if(a==0){
+         cout<<b<< 0;}
+        else{
+        if(a<10){
+            cout<<b<< a;}
+        else{
+            c=a%9;
+            cout<<b<< A[c-1];}}}}
+};
+
+int main()
+{
+	intege* A[4];
+	two B(10); ten C(29); six D(29);
+	A[0] = &B; 
+	A[1] = &C; 
+	A[2] = &D; 
+	for (int i = 0; i < 3; i++)
+		A[i]->GetC();
+}
